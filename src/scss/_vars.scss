@@ -1,0 +1,38 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+// :root {
+//   // base
+//   --font-family: "Open Sans", sans-serif;
+//   --content-width: 1170px;
+//   --container-offset: 15px;
+//   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+//   // colors
+//   --light-color: #fff;
+// }
+
+
+$font-family: "TT Firs Neue", sans-serif;
+$content-width: 1290px;
+$container-offset: 15px;
+$container-width: calc($content-width + $container-offset * 2);
+
+//colors
+$bg-page-color: #fff;
+$bg-dark-color: #202020;
+$btn-primary-color: #ff6e30;
+$btn-primary-color--hover: #bc572B;
+$btn-primary-color--active: #ce4307;
+$greyCA-color: #cacaca;
+$grey99-color: #999;
+$greyE9-color: #e9e9e9;
+$grey80-color: #808080;
+$grey4A-color: #4a4a4a;
+
+$validate-error-color: #FF3030;
+
+$grid-column: 12;
+
+$gap: 30px;
+$expanderX: -4px;
+$expanderY: -2px;

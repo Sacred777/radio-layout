@@ -1,0 +1,430 @@
+.contacts {
+  margin-bottom: 68px;
+
+  &__container {
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    @include mobile {
+      margin-bottom: 15px;
+      padding: 0 20px;
+    }
+  }
+
+  &__wrapper {
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap;
+
+    @include tablet {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 24px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__left-wrapper {
+    grid-column: 8 span;
+    padding-top: 6px;
+    min-height: 466px;
+
+    @include tablet {
+      grid-column: 5 span;
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 2 span;
+      padding-top: 0;
+      min-height: 470px;
+    }
+
+  }
+
+  @include mobile {
+    margin-bottom: 48px;
+  }
+}
+
+.map {
+  position: relative;
+  height: 100%;
+
+  background: {
+    image: url('../../img/map.jpg');
+    repeat: no-repeat;
+    position: top right;
+    size: cover;
+  }
+
+  @include tablet {
+    background-image: url('../../img/map1024.jpg');
+  }
+
+  @include small-tablet {
+    background-image: url('../../img/map768.jpg');
+  }
+
+  @include mobile {
+    background-image: url('../../img/map320.jpg');
+  }
+}
+
+.address {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 50px 50px 60px;
+  width: 48%;
+  height: 100%;
+  background-color: rgba(32, 32, 32, 0.85);
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &__title {
+    margin-bottom: 6px;
+    padding-top: 25px;
+
+    font: {
+      style: normal;
+      weight: 400;
+      size: 24px;
+    }
+
+    line-height: 22px;
+    color: $bg-page-color;
+  }
+
+  &__info {
+    @include tablet {
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin-bottom: 3px;
+    max-width: 300px;
+
+    font: {
+      family: 'Roboto', sans-serif;
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 28px;
+    color: $greyCA-color;
+  }
+
+  &__phone {
+    position: relative;
+    display: flex;
+    align-self: self-start;
+
+    font: {
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 21px;
+    color: $btn-primary-color;
+    z-index: 5;
+    transition: color 0.3s ease-in-out;
+
+    &-svg {
+      margin-right: 4px;
+      width: 18px;
+      height: 18px;
+      fill: $btn-primary-color;
+      transition: fill 0.3s ease-in-out;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: $expanderY;
+      right: $expanderX;
+      bottom: $expanderY;
+      left: $expanderX;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus::before {
+      background-color: $btn-primary-color--hover;
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: $btn-primary-color;
+      }
+
+      &:hover &-svg {
+        fill: $btn-primary-color;
+      }
+    }
+
+    &:active {
+      color: $btn-primary-color--active;
+    }
+
+    &:active &-svg {
+      fill: $btn-primary-color--active;
+    }
+
+    &:active::before {
+      background-color: transparent;
+    }
+
+    @include tablet {
+      position: absolute;
+      left: 148px;
+      bottom: 7px;
+    }
+
+    @include small-tablet {
+      position: static;
+      left: auto;
+      bottom: auto;
+    }
+  }
+
+  @include tablet {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    padding: 25px 30px 17px;
+    min-height: 157px;
+    width: 100%;
+
+    &__title {
+      padding-top: 0;
+    }
+
+    &__phone {
+      color: $btn-primary-color;
+    }
+
+    &__phone-svg {
+      fill: $btn-primary-color;
+    }
+  }
+
+  @include small-tablet {
+    &__text {
+      max-width: 436px;
+    }
+  }
+
+  @include mobile {
+    & {
+      justify-content: flex-start;
+      padding: 25px 18px 14px;
+    }
+
+    &__title {
+      margin-bottom: 11px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__text {
+      margin-bottom: 12px;
+      max-width: 267px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__phone {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__phone-svg {
+      margin-right: 2px;
+    }
+
+  }
+
+}
+
+.order {
+  grid-column: 4 span;
+
+  &__title {
+    margin-bottom: 5px;
+
+    font: {
+      style: normal;
+      weight: 400;
+      size: 24px;
+    }
+
+    line-height: 22px;
+
+    color: $bg-dark-color;
+  }
+
+  &__discription {
+    margin-bottom: 16px;
+
+    font: {
+      family: 'Roboto';
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 22px;
+    color: $grey99-color;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 19px;
+    }
+  }
+
+  &__input {
+    padding: 15px 23px;
+    width: 100%;
+    border: none;
+
+    font: {
+      family: 'Roboto';
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 19px;
+    color: $bg-dark-color;
+    background-color: $greyE9-color;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    transition: outline-color 0.3s ease-in-out;
+
+
+    &::placeholder {
+      color: $grey99-color;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline-color: $btn-primary-color;
+    }
+
+    @include for-desktop {
+      &:hover::placeholder {
+        color: $btn-primary-color;
+      }
+    }
+
+    &:active {
+      outline-color: transparent;
+    }
+  }
+
+  &__textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  @include tablet {
+    grid-column: 3 span;
+  }
+
+  @include small-tablet {
+    grid-column: 4 span;
+  }
+
+  @include mobile {
+    grid-column: 2 span;
+    padding: 0 20px;
+
+    &__title {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &__discription {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__input {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    &__input::placeholder {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__label:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &__textarea {
+      padding-top: 13px;
+    }
+
+    &__label:last-child {
+      margin-bottom: 10px;
+    }
+
+  }
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 2px;
+  left: 23px;
+
+  font: {
+    family: 'Roboto';
+    style: normal;
+    weight: 400;
+    size: 9px;
+  }
+
+  line-height: 11px;
+  color: $validate-error-color  !important;
+}
+
+.just-validate-error-field {
+  outline: 1px solid $validate-error-color;
+}
+
+.address--invisible {
+  visibility: hidden;
+  transform: scale(0);;
+}

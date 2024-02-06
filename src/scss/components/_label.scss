@@ -1,0 +1,26 @@
+.label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 7px 12px;
+
+  font: {
+    family: 'Roboto';
+    style: normal;
+    size: 14px;
+  }
+
+  line-height: 16px;
+  color: $bg-page-color;
+  background-color: $bg-dark-color;
+
+  @include tablet {
+    padding: 7px 16px;
+  }
+
+  @include mobile {
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

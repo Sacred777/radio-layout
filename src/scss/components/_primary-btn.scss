@@ -1,0 +1,38 @@
+.primary-btn {
+  padding: 12px 19px;
+  align-items: center;
+  border: 3px solid $btn-primary-color;
+
+  font: {
+    family: 'Roboto', sans-serif;
+    style: normal;
+    weight: 700;
+    size: 16px;
+  }
+
+  line-height: 19px;
+  color: $bg-page-color;
+  background-color: $btn-primary-color;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: $btn-primary-color--active;
+  }
+
+  &:hover {
+    border-color: $btn-primary-color--hover;
+    background-color: $btn-primary-color--hover;
+  }
+
+  &:active {
+    background-color: $btn-primary-color--active;
+  }
+
+  @include mobile {
+    padding: 9px 20px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+}

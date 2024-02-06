@@ -1,0 +1,46 @@
+<section class="contacts">
+  <div class="container contacts__container" id="contacts">
+    <h2 class="section-title contacts__title title-reset">Контакты</h2>
+    <div class="contacts__wrapper grid">
+      <div class="contacts__left-wrapper">
+        <div class="map">
+          <address class="address flex" id="address">
+            <button class="close-btn address__close-btn btn-reset" aria-label="Спрятать адрес">
+              <span class="close-btn__img address__close-img"></span>
+            </button>
+            <h3 class="address__title title-reset">Студия &laquo;High pass&raquo;</h3>
+            <div class="address__info">
+              <p class="address__text text-reset">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж
+                8,
+                офис № 82</p>
+              <a class="address__phone" href="tel:+749542423532">
+                <svg class="address__phone-svg">
+                  <use xlink:href="img/sprite.svg#phone"></use>
+                </svg>
+                +7 495 424-23-532
+              </a>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div class="order">
+        <h3 class="order__title title-reset">Оставить заявку</h3>
+        <p class="order__discription text-reset">Оставьте ваши данные, указав в графе «Комментарий» желаемые время
+          и дату съёмки или другого мероприятия</p>
+        <form class="order__form">
+          <label class="order__label">
+            <input class="order__input order__input_name" type="text" name="Имя" placeholder="Имя">
+          </label>
+          <label class="order__label">
+            <input class="order__input order__input_email" type="email" name="Email" placeholder="Email">
+          </label>
+          <label class="order__label">
+            <textarea class="order__input order__textarea" type="textarea" name="Комментарий"
+              placeholder="Комментарий"></textarea>
+          </label>
+          <button class="primary-btn order__btn btn-reset">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

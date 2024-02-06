@@ -1,0 +1,195 @@
+.about-us {
+  margin-bottom: 70px;
+  padding-top: 34px;
+  padding-bottom: 70px;
+  background-color: $bg-dark-color;
+
+  @include tablet {
+    padding-bottom: 84px;
+  }
+
+  @include small-tablet {
+    padding-bottom: 65px;
+  }
+
+  @include mobile {
+    margin-bottom: 50px;
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
+
+  &__container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: $gap;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding-left: 21px;
+      padding-right: 21px;
+
+    }
+  }
+
+  &__title {
+    grid-column: 1/3;
+    margin-bottom: 5px;
+    color: $bg-page-color;
+
+    @include tablet {
+      margin-bottom: 3px;
+    }
+
+    @include mobile {
+      grid-column: 1 span;
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+
+  &__text {
+    font: {
+      family: 'Roboto';
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 28px;
+    color: $greyCA-color;
+
+    @include tablet {
+      padding-top: 2px;
+    }
+
+    @include mobile {
+      margin-bottom: 22px;
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+}
+
+.form-box {
+  flex-direction: column;
+  padding-top: 278px;
+  // justify-content: end;
+  min-height: 367px;
+  background-image: url("../../img/about-studio.jpg");
+  // background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+
+  @include tablet {
+    padding-top: 356px;
+    min-height: 513px;
+    background-image: url("../../img/about-studio1024.jpg");
+  }
+
+  @include small-tablet {
+    padding-top: 593px;
+    padding-bottom: 7px;
+    background-image: url("../../img/about-studio768.jpg");
+  }
+
+  @include mobile {
+    padding-bottom: 0;
+    // padding-top: 20px;
+    // padding-top: 302px;
+    padding-top: 109%;
+    min-height: 440px;
+    background-image: url("../../img/about-studio320.jpg");
+  }
+}
+
+
+
+.form {
+  &__title {
+    margin-bottom: 16px;
+
+    font: {
+      style: normal;
+      weight: 400;
+      size: 24px;
+    }
+
+    line-height: 22px;
+    color: $bg-page-color;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 22px;
+      transform: translate(-2px, 2px);
+    }
+  }
+
+  &__label {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 30px;
+
+    @include tablet {
+      margin-bottom: 20px;
+      margin-right: 0;
+      width: 100%;
+      max-width: 342px;
+    }
+
+  }
+
+  &__input {
+    padding-left: 23px;
+    height: 50px;
+    width: 100%;
+
+    font: {
+      family: 'Roboto', sans-serif;
+      style: normal;
+      weight: 400;
+      size: 16px;
+    }
+
+    line-height: 19px;
+    background-color: $grey4A-color;
+    color: $bg-page-color;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    transition: outline-color 0.3s ease-in-out;
+
+
+    &::placeholder {
+      color: $greyCA-color;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline-color: $btn-primary-color;
+    }
+
+    @include for-desktop {
+      &:hover::placeholder {
+        color: $btn-primary-color;
+      }
+    }
+
+    &:active {
+      outline-color: transparent;
+    }
+
+    @include mobile {
+      height: 40px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+
+}
+
+@include tablet {
+  .email-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
